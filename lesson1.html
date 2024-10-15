@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
+    <title>CodeBears | Home</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <meta charset="UTF-32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        color: #323232;
+        font-family: Arial;
+      }
+
+      .opendyslexic {
+        font-family: 'OpenDyslexic', Arial, sans-serif;
+      }
+
+      .default-font {
+        font-family: Arial, sans-serif;
+      }
+
+      .toggle-btn {
+        background-color: #ffd343;
+        color: #323232;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-family: "Ubuntu Mono";
+        margin-bottom: 20px;
+      }
+      @font-face {
+        font-family: 'OpenDyslexic';
+        src: url('fonts/OpenDyslexic3-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleFont()">Switch to OpenDyslexic Font</button>
+    <h1>Lesson 1</h1>
+    <h3>Welcome to lesson 1. Thank you so much for checking out our course here, and we certainly hope that you will have a great experience learning Python. We always try to make the lessons as comprehensive as possible, with many interactive elements and fun material.</h3>
+    <h3>Before we get started with the first lesson, I would like to say some things. This webpage might seem wholly prehistoric, but I guess there wasn't really any need to make it any more technologically advanced.</h3>
+    <h3>Now I will proceed to explain about some things you might want to know about. All of our code sources will be highlighted green, so it is easier for you to see what you need to see. We will also have a version of all of our lessons in OpenDyslexic font, which can be accessed on the top left corner if necessary. It is highly recommended that you get a desktop installation of Python. If that is not accessible, I would recommend <a href="https://www.programiz.com/python-programming/online-compiler/">Programiz</a>. If you prefer a Visual Studio Code type of environment, <a href="https://www.vscode.dev/">vscode.dev</a> is also available, but it is unable to execute code directly.</h3>
+    
+    <h4>Sincerely, David.</h4>
+    </br>
+    <h1>The Four Variables</h1>
+    <h3>In Python, there are four big variables. They are strings, integers, floats, and booleans.</h3>
+    <h3>If you have absolutely no idea about any of our vocabulary here, a variable is a value that well, varies. You can set a variable's data to just about anything that the type supports.</h3>
+    <h3>Integers might just be the most basic type to exist, with their only rule being that they are a whole number from negative infinity to positive infinity; they just cannot be a decimal.</h3>
+    <h3>Strings are essentially strings of text. Strings consist of a piece of text, surrounded by either single or double quotation marks. Now, I must assert my opinion here; double quotes are better. Some people prefer single quotes as they don't have to press shift while typing, but it really just makes a negligible difference.</h3>
+
+    <script>
+      function toggleFont() {
+        const body = document.body;
+        const button = document.querySelector(".toggle-btn");
+
+        if (body.classList.contains("opendyslexic")) {
+          body.classList.remove("opendyslexic");
+          body.classList.add("default-font");
+          button.textContent = "Switch to OpenDyslexic Font";
+        } else {
+          body.classList.remove("default-font");
+          body.classList.add("opendyslexic");
+          button.textContent = "Switch to Arial Font";
+        }
+      }
+    </script>
+  </body>
+</html>

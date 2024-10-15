@@ -5,42 +5,88 @@
 		<title>CodeBears | Home</title>
 		<link rel="icon" href="images/favicon.png" type="image/png">
 		<meta charset="UTF-32">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
 		<style>
 			body {
 				margin: 20px;
 				padding: 20px;
+				background-color: #323232;
+				color: #fff;
 			}
 
 			header {
 				background-color: #3776ab;
 				color: #fff;
 				text-align: left;
-        padding: 0.2px
+				padding: 0.2px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 			}
 
 			#headerfont {
 				font-family: "Ubuntu Mono";
 				color: #ffd343;
-        margin: 20px;
+				margin: 20px;
 			}
 
 			#textfont {
 				font-family: "Ubuntu Mono";
-        color:#fff
-      }
+			}
+
+			.dark-mode {
+				background-color: #323232;
+				color: #fff;
+			}
+
+			.light-mode {
+				background-color: #f4f4f4;
+				color: #000;
+			}
+
+			.mode-toggle-btn {
+				background-color: #ffd343;
+				color: #323232;
+				border: none;
+				padding: 10px;
+				cursor: pointer;
+				font-family: "Ubuntu Mono";
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			a:hover {
+				color: yellow;
+			}
 		</style>
 	</head>
-	<body style="background-color: #323232;">
+	<body>
 		<header>
 			<div id="headerfont">
 				<h1>C O D E B E A R S</h1>
 			</div>
+			<button class="mode-toggle-btn" onclick="toggleMode()" style="font-family: Verdana">Flashlight [CAUTION]</button>
 		</header>
+		</br>
 		<div id="textfont">
 			<h1>Our next meeting time will be [October 15th, 2024]</h1>
 			<h2>Welcome to the Codebears official webpage.</h2>
 			<b>Here, you can find projects, code examples, and public resources.</b>
-			<h1><br></h1>
+			</br>
+			<h1></h1>
+			<h1 style="font-family: Teko">
+				</br>T u t o r i a l s </h1>
+			<h3>
+				<a href="lesson1.html">Lesson 1</a>
+			</h3>
+			<h1>
+				<br>
+			</h1>
 			<h3>Internal IDE</h3>
 			<iframe style="width: 100%; height: 520px; overflow: hidden;" src="https://www.programiz.com/python-programming/online-compiler/" scrolling="yes"></iframe>
 		</div>
@@ -49,5 +95,16 @@
 				<h6>Codebears 2024 @ BDJH, room 1251 every other tuesday, 4:15 PM</h6>
 			</center>
 		</div>
-	</body>
+		<script>
+			function toggleMode() {
+				if (!localStorage.getItem("alertShown")) {
+					alert("WARNING: This will enable light mode, please exit the page immediately if you are in a dark room or sensitive to bright lights.");
+					localStorage.setItem("alertShown", "true");
+				}
+				const body = document.body;
+				body.classList.toggle("dark-mode");
+				body.classList.toggle("light-mode");
+			}
+		</script>
+  </body>
 </html>
