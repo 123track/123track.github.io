@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
+    <title>123track | Python I Lesson #</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        color: #323232;
+        font-family: Arial;
+      }
+
+      .opendyslexic {
+        font-family: 'OpenDyslexic', Arial, sans-serif;
+      }
+
+      .default-font {
+        font-family: Arial, sans-serif;
+      }
+
+      .toggle-btn {
+        background-color: #ffd343;
+        color: #323232;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-family: "Ubuntu Mono";
+        margin-bottom: 20px;
+      }
+      @font-face {
+        font-family: 'OpenDyslexic';
+        src: url('fonts/OpenDyslexic3-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      .codeblock {
+        background-color: #202020;
+        color: #009999;
+        font-family: "Ubuntu Mono";
+        padding: 10px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleFont()">Switch to OpenDyslexic Font</button>
+    <h2>This lesson has now completed, the <a href="python1-lesson2.html">next</a> lesson will be available, or you may use the code playground below to practice.</h2>
+    <h3><a href="python1-lesson2.html">LESSON 2</a></h3>
+    <iframe style="width: 100%; height: 760px;" src="https://www.programiz.com/python-programming/online-compiler/" scrolling="yes"></iframe>
+    <script>
+      function toggleFont() {
+        const body = document.body;
+        const button = document.querySelector(".toggle-btn");
+
+        if (body.classList.contains("opendyslexic")) {
+          body.classList.remove("opendyslexic");
+          body.classList.add("default-font");
+          button.textContent = "Switch to OpenDyslexic Font";
+        } else {
+          body.classList.remove("default-font");
+          body.classList.add("opendyslexic");
+          button.textContent = "Switch to Arial Font";
+        }
+      }
+    </script>
+  </body>
+</html>

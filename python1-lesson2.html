@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
+    <title>123track | Python I Lesson 2</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        color: #323232;
+        font-family: Arial;
+      }
+
+      .opendyslexic {
+        font-family: 'OpenDyslexic', Arial, sans-serif;
+      }
+
+      .default-font {
+        font-family: Arial, sans-serif;
+      }
+
+      .toggle-btn {
+        background-color: #ffd343;
+        color: #323232;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-family: "Ubuntu Mono";
+        margin-bottom: 20px;
+      }
+      @font-face {
+        font-family: 'OpenDyslexic';
+        src: url('fonts/OpenDyslexic3-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      .codeblock {
+        background-color: #202020;
+        color: #009999;
+        font-family: "Ubuntu Mono";
+        padding: 10px;
+        margin: 20px;
+        border-style: double;
+        border-color: #3776ab;
+        border-width: 10px;
+      }
+      .comment {
+        color: #404040
+      }
+      .output {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleFont()">Switch to OpenDyslexic Font</button>
+    <h1>Lesson 2.1</h1>
+    <h3>Congratulations on your completion of lesson 1! In this lesson, we will cover the topic of the print(), type(), str(), int(), and float() functions.</h3>
+    <h2>Recap</h2>
+    <p>Integers are all whole non-decimal numbers from negative infinity to positive infinity.</p>
+    <p>Strings are pieces of *virtually any text that have either single or double quotation marks surrounding them.</p>
+    <p>Floats are all terminating (non-repeating) numbers from negative infinity to positive infinity, including decimals.</p>
+    <p>Booleans are a True or False value, with the "T" or the "F" having to be capitalized.</p>
+    <h1>The Print Function</h1>
+    <p>The print function is one of the major built-in Python functions that serves a big purpose, to print text. You do not need to import any special libraries or do anything, all you need is to type print(), and an empty line of space will print out.</p>
+    <div class="codeblock">
+      <p class="comment"># the print function demo</p>
+      <p>print()</p>
+      <p class="comment"># this will print out an empty line of space</p>
+    </div>
+    <p>The raw print function can be used when you just need to print out a line of nothing, but if you want something meaningful to be printed, you will need to put something inside the parenthesis of the print() function. Inside the parenthesis can be any type of variable, either with its variable name or if the variable doesn't yet exist, you can just put in some variable data. Keep in mind though, that this will not create the variable for you, it will just print out some data. Any type of variable may be used in the print() function.</p>
+    <div class="comment">
+      <p class="comment"># printing some variables 0_0</p>
+      <p>print("You see, if it prints this, it will work, but it will not assign the string variable.")</p>
+      <p class="comment"># now i will print a boolean, integer, and float</p>
+      <p>print(True)</p>
+      <p>print(-4848)</p>
+      <p>print(-4848.48484884848848484848)</p>
+    </div>
+    <h2>Adding print variables</h2>
+    <p>You can also combine variables when using the print function, either using a comma "," or a plus sign "+". Keep in mind that if you choose to use the plus, the variables will have to be of the same type (except when using integers and floats, which are intercompatible), as it will bond together the two variables as a single variable when printing. If you choose the comma however, the variables can be of different types, but Python will automatically add a space between the variables, it treats the variables independently.</p>
+    <div class="codeblock">
+      <p>variable1 = "thisisastring"</p>
+      <p>variable2 = 384</p>
+      <p>variable3 = 3834.3</p>
+      <p>variable4 = True</p>
+      <p class="comment"># this will print variable1 and variable2 independently, but on the same line, and will automatically add a space, they can be of different types</p>
+      <p>print(variable1, variable2)</p>
+      <p class="comment"># however, the code below will throw an error because strings and integers are of different types, and we are trying to fuse them together.</p>
+      <p style="color: red; ">print(variable1 + variable2)</p>
+      <p class="comment"># did you know that we can also combine multiple variables together in one print function with both commas and plusses?</p>
+      <p>print(variable1, variable2, variable3, variable4)</p>
+      <p class="comment"># unfortunately, this will still throw an error below because the variables are not of the same type</p>
+      <p style="color: red;">print(variable1 + variable2 + variable3 + variable4)</p>
+    </div>
+    <h1>Lesson 2.2 - str(), int(), float(), bool, and the type() functions</h1>
+    <h3>str()</h3>
+    <p>The str() function will convert <u>any</u> other variable type into a string. Any data type can be successfully converted into a string type, with no restrictions.</p>
+    <h3>int()</h3>
+    <p>The int() function will convert <u>some</u> variables into integers, as it is more limiting. If you want to convert a string into an integer with int(), the string must ONLY contain an integer in its contents. Floats will also technically work, but the float cannot contain any non-0 decimals. Booleans will work, returning a 1 for True and a 0 for false. Those are about the only choices that are functional.</p>
+    <h3>float()</h3>
+    <p>The float function is similar to the int() function, but converts data to the float type instead. The float function is able to convert variables of integers, strings (must only contain a float), integers, and booleans.</p>
+    <h3>bool()</h3>
+    <p>Surprisingly, the bool() function is quite permissive. It can convert <u>all</u> data types into a boolean. It will give a True result, as long as the variable contains data. Variables that do not contain data are: empty strings "", integers/floats with a 0.000 data, empty lists/tuples/dictionaries (we'll learn about those later), etc. If any of those are inputed, it will return a False result.</p>
+    <div class="codeblock">
+      <p class="comment"># the str() function can convert any variable into a string</p>
+      <p>print(str(True) + str(-48.2))</p>
+      <p class="comment"># the int() function is limiting</p>
+      <p>print(int(True))</p>
+      <p class="comment"># this is a demo of the float() function</p>
+      <p>print(float(482))</p>
+      <p class="comment"># bool() is very intercompatible</p>
+      <p>print(bool("38838383 this is a string actually -2949uhdJj"))</p>
+    </div>
+    <p>An error will be thrown if you attempt to convert a variable that does not support the conversion, for example float to integer.</p>
+    <h3>type()</h3>
+    <p>The type function will tell you the type of the variable if called for.</p>
+    <div class="codeblock">
+      <p class="comment"># this will print the type of our variable, variablename0</p>
+      <p>variablename0 = 383883</p>
+      <p>print(type(variablename0))</p>
+      <p class="comment"># you might want to try this in the code playground later because the result might not be what you're expecting, but in sort of a weird format</p>
+    </div>
+    <h2>This lesson has now completed, the <a href="python1-lesson3.html">next</a> lesson will be available, or you may use the code playground below to practice.</h2>
+    <h3><a href="python1-lesson3.html">LESSON 3</a></h3>
+    <iframe style="width: 100%; height: 760px;" src="https://www.programiz.com/online-compiler/8DMnyiDtU0UyJ" scrolling="yes"></iframe>
+    <script>
+      function toggleFont() {
+        const body = document.body;
+        const button = document.querySelector(".toggle-btn");
+
+        if (body.classList.contains("opendyslexic")) {
+          body.classList.remove("opendyslexic");
+          body.classList.add("default-font");
+          button.textContent = "Switch to OpenDyslexic Font";
+        } else {
+          body.classList.remove("default-font");
+          body.classList.add("opendyslexic");
+          button.textContent = "Switch to Arial Font";
+        }
+      }
+    </script>
+  </body>
+</html>
